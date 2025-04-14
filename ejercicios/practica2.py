@@ -45,7 +45,7 @@ def vertice_aislado(grafo_lista):
 
     for v in grados:
         if (grados[v] == 0):
-            aislados = aislados + [v]
+            aislados.append(v)
     
     return aislados
 
