@@ -1,5 +1,9 @@
-Para instalar pipenv: 
+Para instalar pipenv en la raíz de la carpeta: 
 - pipenv install --python 3.10
-- pipenv install pyteest --dev
+- pipenv install pytest --dev
+Para activar el entorno:
+- pipenv shell.
+Para correr:
+- pipenv run pytest test/test_practica1.py
 
-Es para correr los tests en los proyectos utilizados. 
+Es para correr los tests en los proyectos utilizados.
