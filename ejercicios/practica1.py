@@ -9,7 +9,7 @@ import sys
 def mostrar_saludo():
     print("Hola Mundo")
 
-def lee_grafo_stdin(grafo):
+def lee_grafo(grafo):
     """
     Recibe como argumento un grafo representado como una lista de tipo:
     Ejemplo Entrada: 
