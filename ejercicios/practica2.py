@@ -57,7 +57,37 @@ def componentes_conexas(grafo_lista):
     Ejemplo formato salida: 
         [['A, 'B','C'], ['D','E']]
     '''
-    pass
+    nodos, aristas = grafo_lista
+
+    # Crear el grafo como un diccionario vacío
+    grafo = {}
+    for nodo in nodos:
+        grafo[nodo] = []
+
+    # Agregar las conexiones (aristas) al grafo
+    for a, b in aristas:
+        grafo[a].append(b)
+        grafo[b].append(a)  # porque el grafo es no dirigido
+
+    visitados = []
+    componentes = []
+
+    # Recorrer cada nodo
+    for nodo in nodos:
+        if nodo not in visitados:
+            componente = []
+            cola = [nodo]
+            while len(cola) > 0:
+                actual = cola.pop(0)
+                if actual not in visitados:
+                    visitados.append(actual)
+                    componente.append(actual)
+                    for vecino in grafo[actual]:
+                        if vecino not in visitados and vecino not in cola:
+                            cola.append(vecino)
+            componentes.append(componente)
+
+    return componentes
 
 def es_conexo(grafo_lista):
     '''
