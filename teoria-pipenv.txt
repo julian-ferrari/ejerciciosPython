@@ -1,0 +1,5 @@
+Para instalar pipenv: 
+- pipenv install --python 3.10
+- pipenv install pyteest --dev
+
+Es para correr los tests en los proyectos utilizados. 
