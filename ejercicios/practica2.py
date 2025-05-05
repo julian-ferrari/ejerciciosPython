@@ -120,6 +120,7 @@ def aristas_de(grafo, vertice):
     	[('A', 'B'), ('A', 'C')]
     '''
     vertices, aristas = grafo
+    
     return [arista for arista in aristas if arista[0] == vertice]
 
 def grafo_inducido(grafo, subconjunto_vertices):
@@ -156,5 +157,5 @@ def grafo_complementario(grafo):
             v2 = vertices[j]
             if (v1, v2) not in aristas_set and (v2, v1) not in aristas_set:
                 complemento_aristas.append((v1, v2))
-                
+
     return (vertices, complemento_aristas)
