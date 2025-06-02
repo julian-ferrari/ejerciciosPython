@@ -41,13 +41,24 @@ def lee_grafo_archivo(file_path):
     Ejemplo retorno: 
         (['A','B','C'],[('A','B'),('B','C'),('C','B')])
     '''
-    pass
+    with open(file_path, 'r') as file:
+        lines = [line.strip() for line in file.readlines() if line.strip()]
+    
+    n = int(lines[0])
+    vertices = lines[1:n+1]
+    aristas = [tuple(line.split()) for line in lines[n+1:]]
+    return vertices, aristas
 
 def imprime_grafo_lista(grafo):
     '''
     Muestra por pantalla un grafo. El argumento esta en formato de lista.
+    Ejemplo de salida:
+        Vértices: A, B, C
+        Aristas: (A, B), (B, C), (C, B)
     '''
-    pass
+    vertices, aristas = grafo
+    print("Vértices:", ", ".join(vertices))
+    print("Aristas:", ", ".join(f"({a}, {b})" for a, b in aristas))
 
 #################### FIN EJERCICIO PRACTICA ####################
 def lee_entrada_1():
